@@ -1,23 +1,24 @@
 #ifndef BLOKWIDGET_H
 #define BLOKWIDGET_H
-#include <QLabel>
-#include <QTimer>
 #include <QEvent>
+#include <QLabel>
 #include <QResizeEvent>
 #include <QSplitter>
+#include <QTimer>
 
-class BlokWidget: public QLabel
+class BlokWidget : public QLabel
 {
-  Q_OBJECT
- public:
-  explicit BlokWidget(QWidget *parent = 0);
-  void setKodGrupy(const QString kg);
-  void setKodKursu(const QString kk);
-  QString kodGrupy() const;
-  QString kodKursu() const; 
+    Q_OBJECT
+  public:
+    explicit BlokWidget(QWidget *parent = 0);
+    void setKodGrupy(const QString kg);
+    void setKodKursu(const QString kk);
+    QString kodGrupy() const;
+    QString kodKursu() const;
   private slots:
     void resizeFont();
- private:
+
+  private:
     QTimer *resizeTimer;
     QString kod_grupy;
     QString kod_kursu;
@@ -27,12 +28,12 @@ class BlokWidget: public QLabel
     void leaveEvent(QEvent *);
 };
 
-class Day: public QLabel
+class Day : public QLabel
 {
-  Q_OBJECT
- public:
-  explicit Day(QString text, QWidget *parent = 0);
-  void enterEvent(QEvent *);
+    Q_OBJECT
+  public:
+    explicit Day(QString text, QWidget *parent = 0);
+    void enterEvent(QEvent *);
 };
 
 #endif

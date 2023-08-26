@@ -1,10 +1,10 @@
 #ifndef POBOCZNEDOPASOWYWANIE_H
 #define POBOCZNEDOPASOWYWANIE_H
+#include "kursy_grupy_bloki.h"
 #include <QList>
+#include <QPair>
 #include <QString>
 #include <QVector>
-#include <QPair>
-#include "kursy_grupy_bloki.h"
 
 void dopasuj(Kurs &a, QList<Prowadzacy> prow);
 void usun_przedrostki(QString &line);

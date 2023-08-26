@@ -1,20 +1,20 @@
 #ifndef COLOR_DIALOG_H
 #define COLOR_DIALOG_H
 
-#include <QDialog>
-#include <QColor>
-#include <QColorDialog>
-#include <QGridLayout>
-#include <QDialogButtonBox>
-#include <QMouseEvent>
 #include "color_double_button.h"
 #include "wybrane_kolory.h"
+#include <QColor>
+#include <QColorDialog>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QGridLayout>
+#include <QMouseEvent>
 
 class WybraneKolory;
-class PickColors: public QDialog
+class PickColors : public QDialog
 {
-  Q_OBJECT
- public:
+    Q_OBJECT
+  public:
     explicit PickColors(QWidget *parent = 0);
     QColor colorWyklady() const;
     QColor colorCwiczenia() const;
@@ -41,7 +41,8 @@ class PickColors: public QDialog
     void setFontColorSeminaria(const QColor &clr);
     void setFontColorInne(const QColor &clr);
     void updateColors() const;
- private:
+
+  private:
     ColorDoubleButton *wyklady;
     ColorDoubleButton *cwiczenia;
     ColorDoubleButton *laborki;
@@ -52,12 +53,11 @@ class PickColors: public QDialog
     ColorDoubleButton *KoloryPlanPWR;
     QDialogButtonBox *buttons;
     void updateButton(ColorDoubleButton *bt) const;
-    private slots:
-      void JSOS_clicked() const;
-      void PWR_clicked() const;
-      void getColor();
-      void getFontColor();
+  private slots:
+    void JSOS_clicked() const;
+    void PWR_clicked() const;
+    void getColor();
+    void getFontColor();
 };
-
 
 #endif
