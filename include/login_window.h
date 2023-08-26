@@ -22,6 +22,7 @@
 #include <QPushButton>
 #include <QSpinBox>
 #include <QTabWidget>
+#include <QTextStream>
 #include <QThread>
 #include <QUrl>
 #include <QUrlQuery>
