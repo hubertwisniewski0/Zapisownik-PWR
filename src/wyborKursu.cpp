@@ -96,6 +96,8 @@ void Window::ZablokujNakladajace()
                 QPair<int, int> godziny = convertDate(str.mid(3, 8));
                 CheckBox *box =
                     static_cast<CheckBox *>(tree->itemWidget(child, 0));
+                if (box->isChecked())
+                    break;
                 if (!CzyPozycjaWolna(godziny.first, godziny.second,
                                      str[1].digitValue(),
                                      str[0].digitValue()) ||
@@ -242,11 +244,6 @@ void Window::Zaznaczono()
     }
     ZablokujNakladajace();
     ZmienPotomkow();
-    for (auto &a : wybraneZajecia)
-    {
-        a.first->setEnabled(true);
-        a.second->setBackground(0, QBrush("red"));
-    }
     filtry();
 }
 
