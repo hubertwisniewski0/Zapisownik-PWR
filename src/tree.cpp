@@ -41,16 +41,17 @@ void Window::add_child(TreeWidgetItem *treeItem, Kurs a)
                 prowadzacy->setTextFormat(Qt::RichText);
                 prowadzacy->setTextInteractionFlags(Qt::TextBrowserInteraction);
                 prowadzacy->setOpenExternalLinks(true);
-                data += "       " +
-                        QString("<a href=\"http://polwro.pl/%1\">%2</a>")
+                data += QString("<a href=\"http://polwro.pl/%1\">%2</a>")
                             .arg(a.dane()[i].link())
                             .arg(a.prowadzacy()[i]);
             }
             else
-                data += "       " + a.prowadzacy()[i];
+                data += a.prowadzacy()[i];
         }
         else
-            data += "       " + a.prowadzacy()[i];
+            data += a.prowadzacy()[i];
+        if (i + 1 < a.prowadzacy().size())
+            data += ", ";
     }
     prowadzacy->setText(data);
 

@@ -54,12 +54,12 @@ void EdycjaKursowDialog::ustawKurs(Kurs a, int i)
     if (a.prowadzacy().size() > 0)
         prowadzacy = a.prowadzacy().at(0);
     for (int i = 1; i < a.prowadzacy().size(); i++)
-        prowadzacy += "   " + a.prowadzacy().at(i);
+        prowadzacy += ", " + a.prowadzacy().at(i);
     QString polwro = "";
     if (a.dane().size() > 0)
         polwro = a.dane().at(0).nazwa();
     for (int i = 1; i < a.dane().size(); i++)
-        polwro += "   " + a.dane().at(i).nazwa();
+        polwro += ", " + a.dane().at(i).nazwa();
     QTableWidgetItem *tmp4 = new QTableWidgetItem(prowadzacy);
     QTableWidgetItem *tmp5 = new QTableWidgetItem(polwro);
     QTableWidgetItem *tmp6 = new QTableWidgetItem(DecodeTermin(a.termin()));
