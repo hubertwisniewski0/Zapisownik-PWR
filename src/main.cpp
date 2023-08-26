@@ -1,9 +1,11 @@
 #include "../include/main_window.h"
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QTextCodec>
 
 int main(int argc, char *argv[])
 {
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
     QApplication a(argc, argv);
     a.setStyle("Fusion");
     QRect rec = a.desktop()->screenGeometry();
